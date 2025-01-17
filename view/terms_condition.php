@@ -11,10 +11,10 @@
     <section class="form login">
 
     <header> Welcome to  BondhuShoba  </header>
-    <h2>This is a social media platform</h2>
+    <h2>This is a social media platform</h2><br>
 
     <div class="terms-conditions">
-    <h1>Terms and Conditions</h1>
+    <h3 align="center">Our Terms and Conditions</h3><br>
     
     <p><strong>1. Acceptance of Terms</strong><br>
     By accessing or using the <strong>BondhuShoba</strong> platform, you agree to comply with these Terms and Conditions. If you do not agree, you are prohibited from using our services.</p>
@@ -44,8 +44,9 @@
     These Terms and Conditions shall be governed by and construed in accordance with the laws of the country in which the platform operates.</p>
 
     <p><strong>10. Contact Information</strong><br>
-    If you have any questions regarding these Terms and Conditions, please contact us at:
-    Bndhushba@gmail.com <br>Or<a href="contact_us_form.html"> Click Contact Us</a>
+    If you have any questions regarding these Terms and Conditions, <br>
+    please contact us at:
+    Bndhushba@gmail.com Or <br><a href="contact_us_form.html"> Click Contact Us for Direct Message </a>
     
 </p>
   </div>
