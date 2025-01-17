@@ -238,6 +238,7 @@ body{
 
 /* Chat Area CSS Start */
 .chat-area header{
+
   display: flex;
   align-items: center;
   padding: 18px 30px;
@@ -531,4 +532,25 @@ body.dark-mode .logout {
 
 body.dark-mode .users-list {
   background-color: #1e1e1e;
+}
+
+
+.color-change {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.color-change label {
+  font-size: 14px;
+  color: #333;
+}
+
+.color-change input[type="color"] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }

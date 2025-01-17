@@ -16,23 +16,28 @@
 <body>
   <div class="wrapper">
     <section class="chat-area">
-      <header>
-        <?php 
-          $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
-          $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
-          if(mysqli_num_rows($sql) > 0){
-            $row = mysqli_fetch_assoc($sql);
-          }else{
-            header("location: users.php");
-          }
-        ?>
-        <a href="users.php" class="back-icon"><i class="bcki">Back</i></a>
-        <img src="controller/images/<?php echo $row['img']; ?>" alt="">
-        <div class="details">
-          <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
-          <p><?php echo $row['status']; ?></p>
-        </div>
-      </header>
+    <header>
+  <?php 
+    $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+    $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+    if(mysqli_num_rows($sql) > 0){
+      $row = mysqli_fetch_assoc($sql);
+    }else{
+      header("location: users.php");
+    }
+  ?>
+  <a href="users.php" class="back-icon"><i class="bcki">Back</i></a>
+  <img src="controller/images/<?php echo $row['img']; ?>" alt="">
+  <div class="details">
+    <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
+    <p><?php echo $row['status']; ?></p>
+  </div>
+  <div class="color-change">
+    <label for="chatColor">Chat Color:                     </label>
+    <input type="color" id="chatColor" value="#ffffff">
+  </div>
+</header>
+
       <div class="chat-box">
       </div>
       <form action="#" class="typing-area">
@@ -58,6 +63,7 @@
   </div>
 
   <script src="javascript/chat.js"></script>
+  <script src="javascript/chat_color.js"></script>
   
   <script>
     document.getElementById("emojiSelect").addEventListener("change", function() {
