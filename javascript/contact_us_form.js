@@ -46,12 +46,11 @@ form.onsubmit = (e) => {
     return;
   }
 
-  // Send the form data via AJAX
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "../controller/contact_us_form_val.php", true);
   xhr.onload = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      const response = JSON.parse(xhr.responseText); // Parse JSON response
+      const response = JSON.parse(xhr.responseText); 
 
       if (response.error) {
         statusTxt.style.color = "red";

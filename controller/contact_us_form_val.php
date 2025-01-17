@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json'); // Set content type to JSON
+header('Content-Type: application/json'); 
 
 $name = htmlspecialchars($_POST['name']);
 $email = htmlspecialchars($_POST['email']);
@@ -7,7 +7,7 @@ $phone = htmlspecialchars($_POST['phone']);
 $website = htmlspecialchars($_POST['website']);
 $message = htmlspecialchars($_POST['message']);
 
-$response = []; // Array to store response data
+$response = []; 
 
 if (!empty($email) && !empty($message)) {
     $email_parts = explode('@', $email);
@@ -36,5 +36,5 @@ if (!empty($email) && !empty($message)) {
     $response['error'] = "Email and message fields are required!";
 }
 
-echo json_encode($response); // Return JSON response
+echo json_encode($response); 
 ?>

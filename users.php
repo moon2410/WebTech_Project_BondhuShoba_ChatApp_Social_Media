@@ -11,29 +11,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>BondhuShoba</title>
-  <link rel="stylesheet" href="view/style.css">
+   <link rel="stylesheet" href="view/style.css">
+   <link rel="stylesheet" href="view/darkmode.css">
 </head>
   <body>
     <div class="wrapper">
       <section class="users">
-        <header>
-          <div class="content">
-            <?php 
-              $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
-              if(mysqli_num_rows($sql) > 0){
-                $row = mysqli_fetch_assoc($sql);
-              }
-            ?>
-            <img src="controller/images/<?php echo $row['img']; ?>" alt="">
-            <div class="details">
-              <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
-              <p><?php echo $row['status']; ?></p>
-            </div>
-          </div>
-          <a href="controller/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
-          
-        
-        </header>
+      <header>
+  <div class="content">
+    <?php 
+      $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+      if(mysqli_num_rows($sql) > 0){
+        $row = mysqli_fetch_assoc($sql);
+      }
+    ?>
+    <img src="controller/images/<?php echo $row['img']; ?>" alt="">
+    <div class="details">
+      <span><?php echo $row['fname']. " " . $row['lname'] ?></span>
+      <p><?php echo $row['status']; ?></p>
+    </div>
+  </div>
+  <div class="header-options">
+    <label class="switch">
+      <input type="checkbox" id="dark-mode-toggle">
+      <span class="slider"></span>
+    </label>
+    <a href="controller/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
+  </div>
+</header>
+
         <div class="search">
           <span class="text">Select an user to start chat</span>
           <input type="text" placeholder="Enter name to search...">
@@ -46,6 +52,7 @@
     </div>
 
     <script src="javascript/users.js"></script>
+    <script src="javascript/darkmode.js"></script>
 
   </body>
 </html>
