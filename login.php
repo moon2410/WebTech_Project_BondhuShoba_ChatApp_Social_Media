@@ -16,7 +16,7 @@
 <body>
   <div class="wrapper">
     <section class="form login">
-      <header> Login Bondhushoba </header>
+      <header> Welcome to Bondhushoba </header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
         <div class="field input">
@@ -33,6 +33,8 @@
         </div>
       </form>
       <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
+      <div class="link">Do you want to know<a href="view/terms_condition.php">&nbsp; Our Terms and Condition </a></div>
+      
       <div class="link">If you want to Reach us! <a href="view/contact_us_form.html">Click Contact Us</a></div>
     </section>
   </div>
