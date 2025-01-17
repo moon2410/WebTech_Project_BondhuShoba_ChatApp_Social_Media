@@ -1,9 +1,8 @@
 const form = document.querySelector("form"),
-statusTxt = form.querySelector(".button-area span");
+  statusTxt = form.querySelector(".button-area span");
 
 form.onsubmit = (e) => {
   e.preventDefault();
-  
 
   statusTxt.style.color = "#0D6EFD";
   statusTxt.style.display = "block";
@@ -17,14 +16,15 @@ form.onsubmit = (e) => {
   const website = form.querySelector('input[name="website"]').value.trim();
   const message = form.querySelector('textarea[name="message"]').value.trim();
 
+  // Client-side validation
   if (!email || !message) {
     statusTxt.style.color = "red";
     statusTxt.innerText = "Email and message fields are required!";
     form.classList.remove("disabled");
-    return; 
+    return;
   }
 
-   const emailParts = email.split('@');
+  const emailParts = email.split("@");
   if (emailParts.length !== 2 || emailParts[0] === "" || emailParts[1] === "") {
     statusTxt.style.color = "red";
     statusTxt.innerText = "Enter a valid email address!";
@@ -46,24 +46,28 @@ form.onsubmit = (e) => {
     return;
   }
 
+  // Send the form data via AJAX
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "../controller/contact_us_form_val.php", true);
   xhr.onload = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      let response = xhr.responseText;
-      if (response.includes("Email and message field is required!") || response.includes("Enter a valid email address!") || response.includes("Sorry, failed to send your message!")) {
+      const response = JSON.parse(xhr.responseText); // Parse JSON response
+
+      if (response.error) {
         statusTxt.style.color = "red";
-      } else {
+        statusTxt.innerText = response.error;
+      } else if (response.success) {
+        statusTxt.style.color = "green";
+        statusTxt.innerText = response.success;
         form.reset();
         setTimeout(() => {
           statusTxt.style.display = "none";
         }, 3000);
       }
-      statusTxt.innerText = response;
       form.classList.remove("disabled");
     }
   };
 
-  let formData = new FormData(form);
+  const formData = new FormData(form);
   xhr.send(formData);
 };
