@@ -1,10 +1,27 @@
 <?php 
-  session_start();
-  include_once "model/config.php";
-  if(!isset($_SESSION['unique_id'])){
+session_start();
+include_once "model/config.php";
+
+if(!isset($_SESSION['unique_id'])){
     header("location: login.php");
-  }
+}
+
+$user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+
+
+$logged_in_user_id = $_SESSION['unique_id'];
+$update_query = "UPDATE messages SET is_read = 1 WHERE incoming_msg_id = {$logged_in_user_id} AND outgoing_msg_id = {$user_id} AND is_read = 0";
+mysqli_query($conn, $update_query);
+
+
+$sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+if(mysqli_num_rows($sql) > 0){
+    $row = mysqli_fetch_assoc($sql);
+}else{
+    header("location: users.php");
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

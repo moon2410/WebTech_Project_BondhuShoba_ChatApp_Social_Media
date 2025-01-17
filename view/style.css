@@ -467,7 +467,11 @@ button {
   border: none;
   cursor: pointer;
 }
-/* Toggle Switch */
+
+
+
+
+
 .switch {
   position: relative;
   display: inline-block;
@@ -511,7 +515,7 @@ input:checked + .slider:before {
   transform: translateX(14px);
 }
 
-/* Dark Mode Styles */
+
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
@@ -553,4 +557,15 @@ body.dark-mode .users-list {
   border: none;
   cursor: pointer;
   padding: 0;
+}
+.unread-count {
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.status-dot {
+  display: flex;
+  align-items: center;
 }
