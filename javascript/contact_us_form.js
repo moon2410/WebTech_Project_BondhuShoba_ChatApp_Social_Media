@@ -16,7 +16,7 @@ form.onsubmit = (e) => {
   const website = form.querySelector('input[name="website"]').value.trim();
   const message = form.querySelector('textarea[name="message"]').value.trim();
 
-  // Client-side validation
+
   if (!email || !message) {
     statusTxt.style.color = "red";
     statusTxt.innerText = "Email and message fields are required!";
