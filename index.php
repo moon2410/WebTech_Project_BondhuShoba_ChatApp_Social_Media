@@ -43,6 +43,7 @@
       <div class="link">Do you want to know<a href="view/terms_condition.php">&nbsp; Our Terms and Condition </a></div>
       
       <div class="link">If you want to Reach us! <a href="view/contact_us_form.html">Click Contact Us</a></div>
+      <div class="link">Go to <a href="home.php">Home Page</a></div>
     </section>
   </div>
 

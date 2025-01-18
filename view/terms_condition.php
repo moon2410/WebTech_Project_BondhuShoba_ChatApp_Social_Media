@@ -57,6 +57,7 @@
 
       <div class="link">Not yet signed up? <a href="../index.php">Signup now</a></div>
       <div class="link">Already signed up? <a href="../login.php">Login now</a></div>
+      <div class="link">Go to <a href="../home.php">Home Page</a></div>
       
 
 
