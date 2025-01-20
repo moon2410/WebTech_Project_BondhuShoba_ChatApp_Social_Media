@@ -26,7 +26,7 @@ if (!empty($email) && !empty($message)) {
             $file_content = "Name: $name\nEmail: $email\nPhone: $phone\nWebsite: $website\n\nMessage:\n$message\n\nRegards,\n$name";
 
             if (file_put_contents($filename, $file_content)) {
-                $response['success'] = "Your message has been saved in a text file.";
+                $response['success'] = "Your message has been saved.";
             } else {
                 $response['error'] = "Failed to save the message.";
             }

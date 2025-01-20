@@ -36,6 +36,7 @@
       <input type="checkbox" id="dark-mode-toggle">
       <span class="slider"></span>
     </label>
+    <a href="controller/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Feed</a><br>
     <a href="controller/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
   </div>
 </header>

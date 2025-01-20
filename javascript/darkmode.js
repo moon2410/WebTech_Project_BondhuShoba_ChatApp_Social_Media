@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
   
-    // Check session state to apply dark mode
+
     if (localStorage.getItem("darkMode") === "true") {
       document.body.classList.add("dark-mode");
       darkModeToggle.checked = true;
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isDarkMode = darkModeToggle.checked;
       document.body.classList.toggle("dark-mode", isDarkMode);
   
-      // Save state in localStorage and server
+
       localStorage.setItem("darkMode", isDarkMode);
   
       let xhr = new XMLHttpRequest();

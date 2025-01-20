@@ -7,14 +7,13 @@ if (isset($_SESSION['unique_id'])) {
     $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
     $output = "";
 
-    // Mark messages as read
     $mark_as_read = "UPDATE messages SET is_read = 1 
                      WHERE incoming_msg_id = {$outgoing_id} 
                      AND outgoing_msg_id = {$incoming_id} 
                      AND is_read = 0";
     mysqli_query($conn, $mark_as_read);
 
-    // Fetch messages
+
     $sql = "SELECT * FROM messages 
             LEFT JOIN users ON users.unique_id = messages.outgoing_msg_id
             WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
