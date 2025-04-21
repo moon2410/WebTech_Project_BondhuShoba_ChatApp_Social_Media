@@ -1,5 +1,6 @@
 This is a ChatApp Project
-Ypu can Signup and use as a chatapp
+You can Signup and use as a chatapp
+Use chatapp as a database name
 
 login Details -
 
